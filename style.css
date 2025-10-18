@@ -1,7 +1,7 @@
 /* --- BASE STYLES (Applies to ALL pages) --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #e9ecef; /* Light gray/blue background */
+    background-color: #e9ecef;
     color: #333;
     margin: 0;
     padding: 0;
@@ -29,9 +29,12 @@ header h1 {
 
 /* Navigation Container */
 header nav {
-    background-color: #0056b3; /* Slightly darker blue for contrast */
+    background-color: #0056b3;
     padding: 10px 0;
     width: 100%;
+    /* Ensure nav links are horizontally aligned on desktop */
+    display: flex;
+    justify-content: center;
 }
 
 header nav a {
@@ -42,10 +45,12 @@ header nav a {
     font-weight: 600;
     border-radius: 4px;
     transition: background-color 0.3s;
+    /* Allow links to wrap if screen is very small */
+    white-space: nowrap; 
 }
 
 header nav a:hover {
-    background-color: #004085; /* Darker hover effect */
+    background-color: #004085;
 }
 
 /* --- MAIN CONTENT LAYOUT --- */
@@ -55,9 +60,10 @@ main {
     margin: 30px 20px;
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
+    width: calc(100% - 40px); /* Fill available width minus margins */
     max-width: 550px;
     flex-grow: 1;
+    box-sizing: border-box; /* Include padding/border in element's total width */
 }
 
 main h2 {
@@ -90,7 +96,8 @@ textarea {
     border: 1px solid #ced4da;
     border-radius: 4px;
     font-size: 16px;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 100%; /* Important: makes input fill the container */
+    box-sizing: border-box; /* Ensures width calculation is correct */
 }
 
 input:focus, textarea:focus {
@@ -106,7 +113,7 @@ textarea {
 /* --- BUTTON STYLES (CTA & Submit) --- */
 button[type="submit"],
 .loan-button {
-    background-color: #28a745; /* Green for action */
+    background-color: #28a745;
     color: white;
     padding: 12px 20px;
     border: none;
@@ -118,6 +125,8 @@ button[type="submit"],
     text-align: center;
     text-decoration: none;
     display: block;
+    width: 100%; /* Important: makes button fill the container */
+    box-sizing: border-box;
     transition: background-color 0.3s;
 }
 
@@ -156,4 +165,48 @@ footer {
     color: #6c757d;
     background-color: #f8f9fa;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+/* ======================================= */
+/* --- MOBILE OPTIMIZATION (Media Query) --- */
+/* ======================================= */
+@media (max-width: 600px) {
+    
+    /* Global Adjustments */
+    header h1 {
+        font-size: 1.5em; /* Shrink title on mobile */
+    }
+
+    /* Navigation Stack */
+    header nav {
+        flex-direction: column; /* Stack links vertically */
+        padding: 0;
+    }
+
+    header nav a {
+        margin: 0;
+        border-radius: 0;
+        border-top: 1px solid #004085; /* Add separators between links */
+        display: block; /* Ensure link fills the width */
+        padding: 12px;
+    }
+
+    /* Main Content */
+    main {
+        margin: 20px 10px; /* Reduce vertical margin, increase horizontal space */
+        padding: 20px;
+        width: calc(100% - 20px); /* Max width minus margins (10px on each side) */
+    }
+    
+    .welcome-content {
+        padding: 20px 10px;
+    }
+    
+    .welcome-content h2 {
+        font-size: 2em;
+    }
+    
+    .welcome-content p {
+        font-size: 1em;
+    }
 }
