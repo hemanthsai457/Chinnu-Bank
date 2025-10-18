@@ -3,43 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to Chinnu Bank</title>
+    <title>Chinnu Bank - Home</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific styling for the welcome section */
+        .welcome-content {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .welcome-content h2 {
+            color: #007bff;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .welcome-content p {
+            font-size: 1.2em;
+            color: #555;
+            max-width: 600px;
+            margin: 20px auto;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>Welcome to Chinnu Bank 🏦</h1>
-        <p>With love from your partner! ❤️</p>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="loan.html">Apply for a Loan</a>
+            <a href="complaint.html">File a Complaint</a>
+        </nav>
     </header>
 
-    <main>
-        <h2>Loan Request Form</h2>
-        <form action="https://formsubmit.co/tunetherapynlp@gmail.com" method="POST">
-            
-            <input type="hidden" name="_cc" value="tunetherapynlp@gmail.com"> 
-
-            <input type="hidden" name="_autoresponse" value="Thank you for your loan request to Chinnu Bank. We have received your submission and will be in touch within 24 hours.">
-
-            <input type="hidden" name="_next" value="https://<Your-GitHub-Username>.github.io/<Repository-Name>/thanks.html">
-
-            <input type="hidden" name="_subject" value="NEW LOAN REQUEST: Chinnu Bank Website">
-            
-            
-            <label for="full_name">Full Name:</label>
-            <input type="text" id="full_name" name="Full Name" required>
-
-            <label for="email">Email Address:</label>
-            <input type="email" id="email" name="Email" required>
-
-            <label for="loan_amount">Loan Amount (in $):</label>
-            <input type="number" id="loan_amount" name="Loan Amount" min="1000" required>
-
-            <label for="loan_purpose">Purpose of Loan:</label>
-            <textarea id="loan_purpose" name="Loan Purpose" rows="4" required></textarea>
-            
-            <button type="submit">Submit Loan Request</button>
-        </form>
-        <p class="note">A representative will contact you shortly to process your request.</p>
+    <main class="welcome-content">
+        <h2>Your Trusted Financial Partner</h2>
+        <p>At Chinnu Bank, we are committed to providing simple, transparent, and hassle-free banking services for our loved ones. Whether you're planning a major purchase or have a concern, we're here to help you every step of the way.</p>
+        
+        <div class="cta-buttons">
+            <a href="loan.html" class="loan-button">Start Your Loan Application Today</a>
+        </div>
     </main>
 
     <footer>

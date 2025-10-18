@@ -1,33 +1,75 @@
+/* --- BASE STYLES (Applies to ALL pages) --- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e9ecef; /* Light gray/blue background */
     color: #333;
     margin: 0;
     padding: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-height: 100vh; /* Ensure footer stays at the bottom */
 }
 
+/* --- HEADER & NAVIGATION --- */
 header {
-    background-color: #007bff;
+    background-color: #007bff; /* Primary Blue */
     color: white;
     width: 100%;
     text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px 0 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+header h1 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+/* Navigation Container */
+header nav {
+    background-color: #0056b3; /* Slightly darker blue for contrast */
+    padding: 10px 0;
+    width: 100%;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+header nav a:hover {
+    background-color: #004085; /* Darker hover effect */
+}
+
+/* --- MAIN CONTENT LAYOUT --- */
 main {
     background-color: white;
     padding: 30px;
-    margin: 20px;
+    margin: 30px 20px;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 500px;
+    max-width: 550px; /* Max width for forms and main content */
+    flex-grow: 1;
 }
 
+main h2 {
+    color: #007bff;
+    text-align: center;
+    margin-top: 0;
+    border-bottom: 2px solid #e9ecef;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* --- FORM STYLES (Loan & Complaint) --- */
 form {
     display: flex;
     flex-direction: column;
@@ -36,7 +78,8 @@ form {
 label {
     margin-top: 15px;
     margin-bottom: 5px;
-    font-weight: bold;
+    font-weight: 600;
+    color: #495057;
 }
 
 input[type="text"],
@@ -44,38 +87,73 @@ input[type="email"],
 input[type="number"],
 textarea {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #ced4da;
     border-radius: 4px;
     font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-button[type="submit"] {
-    background-color: #28a745;
+input:focus, textarea:focus {
+    border-color: #80bdff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* --- BUTTON STYLES (CTA & Submit) --- */
+button[type="submit"],
+.loan-button {
+    background-color: #28a745; /* Green for action */
     color: white;
-    padding: 10px 15px;
+    padding: 12px 20px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 30px;
     font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: block; /* Makes the link act like a block button */
+    transition: background-color 0.3s;
 }
 
-button[type="submit"]:hover {
+button[type="submit"]:hover,
+.loan-button:hover {
     background-color: #218838;
 }
 
-.note {
+/* --- WELCOME PAGE SPECIFIC STYLES (From index.html <style> tag - moved here) --- */
+.welcome-content {
     text-align: center;
-    margin-top: 20px;
-    font-style: italic;
-    color: #666;
+    padding: 50px 20px;
+}
+.welcome-content h2 {
+    color: #007bff;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    border-bottom: none; /* Override main h2 border */
+}
+.welcome-content p {
+    font-size: 1.2em;
+    color: #555;
+    max-width: 600px;
+    margin: 20px auto;
+}
+.cta-buttons {
+    margin-top: 30px;
 }
 
+/* --- FOOTER --- */
 footer {
     width: 100%;
     text-align: center;
-    padding: 10px 0;
-    margin-top: 20px;
-    border-top: 1px solid #eee;
-    color: #999;
+    padding: 15px 0;
+    border-top: 1px solid #dee2e6;
+    color: #6c757d;
+    background-color: #f8f9fa; /* Light background for footer */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
 }
