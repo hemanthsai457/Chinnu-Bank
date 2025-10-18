@@ -8,7 +8,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh; /* Ensure footer stays at the bottom */
+    min-height: 100vh;
 }
 
 /* --- HEADER & NAVIGATION --- */
@@ -56,7 +56,7 @@ main {
     border-radius: 8px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 550px; /* Max width for forms and main content */
+    max-width: 550px;
     flex-grow: 1;
 }
 
@@ -117,7 +117,7 @@ button[type="submit"],
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    display: block; /* Makes the link act like a block button */
+    display: block;
     transition: background-color 0.3s;
 }
 
@@ -126,7 +126,7 @@ button[type="submit"]:hover,
     background-color: #218838;
 }
 
-/* --- WELCOME PAGE SPECIFIC STYLES (From index.html <style> tag - moved here) --- */
+/* --- WELCOME PAGE SPECIFIC STYLES --- */
 .welcome-content {
     text-align: center;
     padding: 50px 20px;
@@ -135,7 +135,7 @@ button[type="submit"]:hover,
     color: #007bff;
     font-size: 2.5em;
     margin-bottom: 10px;
-    border-bottom: none; /* Override main h2 border */
+    border-bottom: none;
 }
 .welcome-content p {
     font-size: 1.2em;
@@ -154,6 +154,6 @@ footer {
     padding: 15px 0;
     border-top: 1px solid #dee2e6;
     color: #6c757d;
-    background-color: #f8f9fa; /* Light background for footer */
+    background-color: #f8f9fa;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
 }
